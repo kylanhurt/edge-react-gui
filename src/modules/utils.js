@@ -12,7 +12,6 @@ import type {
   EdgeTransaction
 } from 'edge-core-js'
 import _ from 'lodash'
-import type { State } from './ReduxTypes'
 import { Platform } from 'react-native'
 import { getCurrencyConverter } from './Core/selectors.js'
 import { intl } from '../locales/intl.js'
