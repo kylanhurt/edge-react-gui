@@ -13,20 +13,17 @@ export const styles = {
   },
   gradient: {
     height: THEME.HEADER,
-    width: '100%',
-    position: 'absolute'
-  },
-  view: {
-    position: 'relative',
-    top: THEME.HEADER,
-    paddingHorizontal: 20,
-    paddingVertical: 5
+    width: '100%'
   },
   container: {
     position: 'relative',
-    height: PLATFORM.deviceHeight - 66,
     paddingHorizontal: 20,
     backgroundColor: THEME.COLORS.GRAY_4
+  },  
+  view: {
+    position: 'relative',
+    paddingHorizontal: 20,
+    paddingVertical: 5
   },
   leftArea: {
     flexDirection: 'row'
@@ -95,6 +92,7 @@ export const styles = {
 
   },
   buyButton: {
+    width: '60%',
     flex: 1,
     backgroundColor: THEME.COLORS.SECONDARY,
     borderRadius: 12,
@@ -107,6 +105,7 @@ export const styles = {
     color: THEME.COLORS.WHITE
   },
   browseOrderBookButton: {
+    width: '60%',    
     flex: 1,
     borderRadius: 12,
     paddingHorizontal: 48
@@ -156,13 +155,68 @@ export const styles = {
     color: THEME.COLORS.GRAY_1,
     textAlignVertical: 'center'
   },
-
   searchContainer: {
     position: 'relative',
     backgroundColor: THEME.COLORS.TRANSPARENT,
     borderBottomWidth: 1,
     borderBottomColor: THEME.COLORS.GRAY_3,
     width: '100%'
+  },
+  orderBookResultsScrollView: {
+  },
+  orderBookResultsContainer: {
+    position: 'relative',
+    backgroundColor: THEME.COLORS.TRANSPARENT,
+    borderBottomWidth: 1,
+    borderBottomColor: THEME.COLORS.GRAY_3,
+    width: '100%',
+    height: 400,
+  },
+  orderBookResultInfo: {
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    paddingHorizontal: 8,
+    paddingVertical: 4
+  },
+  orderBookResultAmountsArea:{
+    marginBottom: 6
+  },
+  orderBookResultAmountsText: {
+    fontSize: 14
+  },
+  orderBookResultExpirationArea: {
+
+  },
+  orderBookResultExpirationText: {
+    fontSize: 14
+  },
+  orderBookResultSeparator: {
+    borderBottomWidth: 2,
+    borderBottomColor: THEME.COLORS.GRAY_1
+  },
+  confirmDexOrderInfoArea:{
+    marginBottom: 6
+  },
+  confirmDexOrderAmountsText: {
+    textAlign: 'center',
+    fontSize: 18,
+    lineHeight: 24
+  },
+  confirmDexOrderRateText: {
+    textAlign: 'center',    
+    fontSize: 18,
+    lineHeight: 24
+  },
+  confirmDexOrderExpirationText: {
+    textAlign: 'center',    
+    fontSize: 18,
+    lineHeight: 24
+  },  
+  confirmFillDexOrderModalSubmitButton: {
+    marginBottom: 8
+  },
+  confirmFillDexOrderModalSubmitButtonText: {
+    color: THEME.COLORS.WHITE
   },
   underlayColor: {
     color: THEME.COLORS.GRAY_4

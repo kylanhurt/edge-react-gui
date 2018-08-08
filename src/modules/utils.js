@@ -1,6 +1,7 @@
 // @flow
 
 import { bns, div, eq, gte, mul, toFixed } from 'biggystring'
+import { BigNumber } from '@0xproject/utils'
 import type {
   EdgeCurrencyInfo,
   EdgeCurrencyPlugin,
@@ -459,6 +460,21 @@ export const getTimeInMinutes = (params: { measurement: string, value: number })
   return strategy(value)
 }
 
+export function secondsToHms(d) {
+  d = Number(d)
+  var h = Math.floor(d / 3600)
+  var m = Math.floor(d % 3600 / 60)
+  var s = Math.floor(d % 3600 % 60)
+  let sDisplay = ''
+  const hDisplay = h > 0 ? h + 'h ' : ''
+  const mDisplay = m > 0 ? m + 'm ' : ''
+  if (h === 0) {
+    sDisplay = s > 0 ? s + 's ' : ''
+  }
+
+  return hDisplay + mDisplay + sDisplay; 
+}
+
 export type PrecisionAdjustParams = {
   exchangeSecondaryToPrimaryRatio: number,
   secondaryExchangeMultiplier: string,
@@ -567,6 +583,13 @@ export function getObjectDiff (obj1: Object, obj2: Object, traverseObjects?: Obj
   return ''
 }
 
+export const convertBiggystringToNativeBigNumber = (amount: string, decimal: number, precision: number) => {
+  const decimalString = decimal.toString()
+  const multiplier = '1' + '0'.repeat(decimalString)
+  const nativeAmount = bns.div(amount, multiplier, precision)
+  return new BigNumber(nativeAmount)
+}
+
 export function snooze (ms: number): Promise<void> {
   return new Promise((resolve: any) => setTimeout(resolve, ms))
 }
@@ -576,3 +599,4 @@ export const isEdgeLogin = (data: string) => {
 
   return EDGE_LOGIN_REG_EXP.test(data)
 }
+

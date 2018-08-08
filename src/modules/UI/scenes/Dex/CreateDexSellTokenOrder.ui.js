@@ -7,7 +7,7 @@ import { FormField } from '../../../../components/FormField.js'
 import s from '../../../../locales/strings.js'
 import { PrimaryButton } from '../../components/Buttons'
 import Text from '../../components/FormattedText'
-import Gradient from '../../components/Gradient/Gradient.ui'
+import { Gradient } from '../../components/Gradient/Gradient.ui'
 import SafeAreaView from '../../components/SafeAreaView'
 import styles from './style.js'
 
@@ -79,6 +79,6 @@ export class CreateDexSellTokenOrderComponent extends Component<Props, State> {
   }
 
   _onNext = () => {
-    console.log('submission executing')
+    console.log('DEX: submission executing')
   }
 }
